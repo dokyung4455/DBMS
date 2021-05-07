@@ -18,7 +18,7 @@ FROM tbl_buyer;
 DELETE tbl_buyer ;
 
 CREATE TABLE tbl_book_rent(
-br_seq	NUMBER		PRIMARY KEY	,
+br_seq NUMBER PRIMARY KEY,
 br_sdate	VARCHAR2(10)	NOT NULL		,
 br_isbn	CHAR(13)	NOT NULL		,
 br_bcode	CHAR(5)	NOT NULL		,
@@ -125,6 +125,8 @@ SELECT
 CREATE VIEW view_도서대여정보 AS
 (
 SELECT
+    BR.br_seq as 주문번호,
+    
     BR.br_sdate AS 대여일,
     br.br_bcode AS 회원코드,
     bu.bu_name AS 회원명,
